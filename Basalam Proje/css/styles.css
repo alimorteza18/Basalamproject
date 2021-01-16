@@ -270,7 +270,7 @@ input{
     width: 100%;
     display: flex;
 }
-#minus-btn ,#minus-btn1 ,#minus-btn2{
+.minus-btn{
     height: 24px;
     width: 24px;
     border: none;
@@ -282,7 +282,7 @@ input{
     margin-right: 16px;
     outline: none;
 }
-#count1 , #count2 , #count{
+.count{
     height: 16px;
     width: 16px;
     border: 1px solid #EEEEEE;
@@ -296,7 +296,7 @@ input{
     outline: none;
     text-align: center;
 }
-#plus-btn ,#plus-btn1 ,#plus-btn2{
+.plus-btn{
     height: 24px;
     width: 24px;
     border: none;
