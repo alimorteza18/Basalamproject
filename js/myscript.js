@@ -14,11 +14,11 @@ function loop1(o){
       if (counter < 10) {
         inctimer = setTimeout(function () {
           increment();
-        }, 300);}
+        }, 500);}
         else {
         inctimer = setTimeout(function () {
           increment();
-        }, 30);
+        }, 50);
       }
     }
     plus[0].addEventListener('mousedown', increment);
