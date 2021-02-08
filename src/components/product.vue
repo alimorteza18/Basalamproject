@@ -39,7 +39,7 @@
 export default {
    data() {
     return {
-      speed: 150,
+      speed: 750,
       setTime: null,
     };
   },
@@ -67,12 +67,12 @@ export default {
     },
     timer(speed) {
       this.setTime = setTimeout(() => {
-        speed(), (this.speed -= 2);
+        speed(), (this.speed -= 75);
       }, this.speed);
     },
     cleartimer() {
       clearTimeout(this.setTime);
-      this.speed = 150;
+      this.speed = 500;
     },
   },
  

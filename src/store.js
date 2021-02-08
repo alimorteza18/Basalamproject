@@ -36,7 +36,7 @@ const store = new Vuex.Store({
                 });
                 if (product) {
                     product.counter++;
-                    product.counter > 99 ? (product.counter = 99) : product.counter;
+
                 }
             });
         },
@@ -48,7 +48,7 @@ const store = new Vuex.Store({
                 });
                 if (product) {
                     product.counter--;
-                    product.counter < 1 ? (product.counter = 1) : product.counter;
+                    product.counter < 0 ? (product.counter = 0) : product.counter;
                 }
             });
         },
