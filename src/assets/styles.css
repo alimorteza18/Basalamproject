@@ -1,29 +1,35 @@
-*{
-    font-family: IRANSans !important;  
+* {
+    font-family: IRANSans !important;
 }
-div{
+
+div {
     background-color: white;
 }
-body{
+
+body {
     background: #EEEEEE;
 }
-#container{
+
+#container {
     height: 1283px;
     width: 360px;
     background: #EEEEEE;
-    margin: auto;  
+    margin: auto;
 }
-#header{
+
+#header {
     width: 100%;
     height: 101px;
-    background-color: white; 
+    background-color: white;
 }
-#up-down{
+
+#up-down {
     height: 50%;
     width: 100%;
     display: flex;
 }
-#up-down1{
+
+#up-down1 {
     height: 50%;
     width: 100%;
     display: flex;
@@ -31,36 +37,41 @@ body{
     align-items: center;
 }
 
-#logo-l{
-    height: 100%;
-    width: 50%;
-    display: flex;  
-}
-#logo-r{
+#logo-l {
     height: 100%;
     width: 50%;
     display: flex;
 }
-body{
+
+#logo-r {
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+body {
     direction: rtl;
 }
-#basalam-logo{
+
+#basalam-logo {
     width: 95.79px;
     height: 24px;
     margin-right: 16px;
     margin-top: 12px;
 }
-#left-logo{
+
+#left-logo {
     width: 32px;
     height: 32px;
     margin-top: 11px;
     margin-right: 8px;
 }
-#left-logo-svg{
+
+#left-logo-svg {
     margin-top: 12px;
-    
 }
-#basalam-shop{
+
+#basalam-shop {
     background: #3E3E3E;
     height: 32px;
     width: 103px;
@@ -71,22 +82,26 @@ body{
     align-items: center;
     margin-right: 32px;
 }
-#basalam-shop a{
+
+#basalam-shop a {
     color: #FAFAFA;
     text-decoration: none;
     font-size: 12px;
 }
-#basalam-shop-2{
+
+#basalam-shop-2 {
     height: 19px;
     width: 76px;
 }
-#shop-icon{
+
+#shop-icon {
     height: 32px;
     width: 32px;
     margin-top: 8px;
     display: flex;
 }
-#search-box{
+
+#search-box {
     height: 40px;
     width: 328px;
     border-radius: 100px;
@@ -94,7 +109,8 @@ body{
     box-sizing: border-box;
     display: flex;
 }
-input{
+
+input {
     height: 19px;
     width: 250px;
     margin-right: 16px;
@@ -103,37 +119,48 @@ input{
     outline: none;
     font-size: 12px;
 }
-#search-icon{
+
+#search-icon {
     width: 20.01px;
     height: 20px;
     margin-top: 6px;
-    margin-right: 16px;;
+    margin-right: 16px;
+    ;
 }
-#middle{
-    width:100%;
+
+#middle {
+    width: 100%;
     height: 604.25px;
     background-color: white;
-    margin-top: 8px;
 }
-#tabs{
+
+#tabs {
     height: 42px;
     width: 100%;
     display: flex;
+    margin-top: 8px;
 }
-#list1{
+
+#list1 {
     width: 180px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #DF3856; 
+    border-bottom: 2px solid #DF3856;
 }
-#list1 a{
+
+#list1 a {
     font-size: 16px;
     color: #DF3856;
     text-decoration: none;
 }
-#list2{
+
+#list2 a:hover {
+    color: #DF3856;
+}
+
+#list2 {
     width: 180px;
     height: 40px;
     display: flex;
@@ -141,31 +168,37 @@ input{
     align-items: center;
     border-bottom: 2px solid #DFDFDF;
 }
-#list2 a{
+
+#list2 a {
     font-size: 16px;
     text-decoration: none;
     color: #535353;
 }
-.txt{
+
+.txt {
     height: 120px;
     width: 100%;
 }
-.shoping{
+
+.shoping {
     height: 138px;
     width: 100%;
     border-bottom: 1px solid #EEEEEE;
 }
-.shoping1{
+
+.shoping1 {
     height: 138px;
     width: 100%;
     margin-top: 16px;
     border-bottom: 1px solid #EEEEEE;
 }
-.shoping2{
+
+.shoping2 {
     height: 138px;
     width: 100%;
 }
-.p1{
+
+.p1 {
     width: 40px;
     height: 22px;
     font-size: 14px;
@@ -173,30 +206,35 @@ input{
     margin-top: 16px;
     margin-right: 16px;
 }
-.p2{
+
+.p2 {
     width: 180px;
     height: 22px;
     display: flex;
     margin-top: 15px;
     margin-right: 4px;
 }
-.txt-top{
+
+.txt-top {
     width: 100%;
     height: 40%;
     display: flex;
 }
-.txt-bottom{
+
+.txt-bottom {
     width: 100%;
     height: 60%;
     display: flex;
 }
-.img1{
+
+.img1 {
     width: 40px;
     height: 40px;
     margin-top: 16px;
     margin-right: 16px;
 }
-.user{
+
+.user {
     width: 54px;
     height: 19px;
     margin-top: 16px;
@@ -205,18 +243,21 @@ input{
     justify-content: center;
     align-items: center;
 }
-.user a{
+
+.user a {
     font-size: 12px;
     color: #3E3E3E;
 }
-.gps-logo{
+
+.gps-logo {
     width: 10.67px;
     height: 13.32px;
     margin-top: 38px;
     display: inline-flex;
     margin-right: -54px;
 }
-.user-city{
+
+.user-city {
     width: 56.63px;
     height: 19px;
     margin-top: 35px;
@@ -225,52 +266,60 @@ input{
     justify-content: center;
     align-items: center;
 }
-.user-city a{
+
+.user-city a {
     font-size: 10px;
     color: #3E3E3E;
 }
-.jambon-img{
+
+.jambon-img {
     width: 82px;
     height: 82px;
     margin-right: 16px;
 }
-.jambon-title{
+
+.jambon-title {
     width: 110px;
     height: 19px;
     margin-right: 16px;
     display: flex;
-    
 }
-.jambon-title a{
+
+.jambon-title a {
     font-size: 12px;
-    
 }
-.price-number{
+
+.price-number {
     height: 19px;
     width: 81px;
     margin-top: 64px;
     margin-right: 16px;
 }
-.price-number a{
+
+.price-number span {
     font-size: 12px;
 }
-.toman{
+
+.toman {
     width: 16px;
     height: 14.31px;
     margin-top: 68px;
     margin-right: 4px;
 }
-.shoping-top{
+
+.shoping-top {
     height: 82px;
     width: 100%;
-    display: flex;  
+    display: flex;
 }
-.shoping-bottom{
+
+.shoping-bottom {
     height: 55px;
     width: 100%;
     display: flex;
 }
-.minus-btn{
+
+.minus-btn {
     height: 24px;
     width: 24px;
     border: none;
@@ -282,7 +331,8 @@ input{
     margin-right: 16px;
     outline: none;
 }
-.count{
+
+.count {
     height: 16px;
     width: 16px;
     border: 1px solid #EEEEEE;
@@ -296,7 +346,8 @@ input{
     outline: none;
     text-align: center;
 }
-.plus-btn{
+
+.plus-btn {
     height: 24px;
     width: 24px;
     border: none;
@@ -308,7 +359,8 @@ input{
     margin-right: 4px;
     outline: none;
 }
-.remove-btn{
+
+.remove-btn {
     height: 24px;
     width: 24px;
     border: none;
@@ -320,7 +372,8 @@ input{
     margin-right: 16px;
     outline: none;
 }
-.txt-2{
+
+.txt-2 {
     width: 110px;
     height: 16px;
     border-bottom: 1px dashed #7D7D7D;
@@ -330,38 +383,45 @@ input{
     justify-content: center;
     align-items: center;
 }
-.txt-2 a{
+
+.txt-2 a {
     font-size: 10px;
     color: #7D7D7D;
 }
-.top-shoping2{
+
+.top-shoping2 {
     height: 42px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.suprize{
+
+.suprize {
     width: 328.5px;
     height: 28px;
     background: #DFF5F1;
     border-radius: 2px;
 }
-.suprize a{
+
+.suprize a {
     color: #00786C;
     font-size: 12px;
     margin-right: 8px;
 }
-.bottom-shoping2{
+
+.bottom-shoping2 {
     height: 102px;
     width: 100%;
-    display: flex;  
+    display: flex;
 }
-.bottom-right{
+
+.bottom-right {
     width: 188px;
     height: 100%;
 }
-.continue-shop{
+
+.continue-shop {
     height: 32px;
     width: 172px;
     background: #DF3856;
@@ -372,15 +432,18 @@ input{
     justify-content: center;
     align-items: center;
 }
-.continue-shop a{
+
+.continue-shop a {
     color: #FAFAFA;
     font-size: 12px;
 }
-.bottom-left{
+
+.bottom-left {
     width: 172px;
     height: 100%;
 }
-.code{
+
+.code {
     height: 24px;
     width: 125px;
     background: #EEEEEE;
@@ -389,37 +452,44 @@ input{
     margin-right: 32px;
     display: flex;
 }
-.code-icon{
+
+.code-icon {
     margin-top: 6px;
     margin-right: 8px;
 }
-.code a{
+
+.code a {
     font-size: 10px;
     margin-top: 4px;
     margin-right: 2px;
 }
-.kala2{
+
+.kala2 {
     font-size: 12px;
     color: #535353;
     margin-right: 55px;
 }
-.toman2{
+
+.toman2 {
     width: 55px;
     height: 19px;
     display: flex;
     justify-content: space-between;
     margin-right: 98px;
 }
-.toman2 a{
+
+.toman2 a {
     font-size: 12px;
     color: #535353;
 }
-#footer{
+
+#footer {
     height: 260px;
     width: 100%;
     margin-top: 6px;
 }
-.user2{
+
+.user2 {
     width: 64px;
     height: 19px;
     margin-top: 16px;
@@ -428,27 +498,32 @@ input{
     justify-content: center;
     align-items: center;
 }
-.user2 a{
+
+.user2 a {
     font-size: 11px;
     color: #3E3E3E;
 }
-.user-city2{
+
+.user-city2 {
     width: 56.63px;
     height: 19px;
     margin-top: 35px;
     margin-right: 8px;
     display: flex;
 }
-.user-city2 a{
+
+.user-city2 a {
     font-size: 10px;
     color: #3E3E3E;
 }
-.bottom-shoping22{
+
+.bottom-shoping22 {
     height: 60px;
     width: 100%;
     display: flex;
 }
-.continue-shop2{
+
+.continue-shop2 {
     height: 32px;
     width: 172px;
     background: #DF3856;
@@ -459,24 +534,30 @@ input{
     justify-content: center;
     align-items: center;
 }
-.continue-shop2 a{
+
+.continue-shop2 a {
     color: #FAFAFA;
     font-size: 12px;
 }
-#footer-1{
+
+#footer-1 {
     height: 70px;
     width: 100%;
     margin-top: 128px;
     display: flex;
+    position: sticky;
+    top: 0;
 }
-#footer-1-right{
+
+#footer-1-right {
     width: 196px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#continue{
+
+#continue {
     width: 180px;
     height: 48px;
     background: #DF3856;
@@ -485,34 +566,40 @@ input{
     justify-content: center;
     align-items: center;
 }
-#continue a{
+
+#continue a {
     color: #FAFAFA;
     font-size: 16px;
 }
-#footer-1-left{
+
+#footer-1-left {
     width: 164px;
     height: 100%;
 }
-#af{
-height: 19px;
-width: 120px;
-margin-top: 16px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-right: 16px;
+
+#af {
+    height: 19px;
+    width: 120px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
 }
-#af a{
+
+#af a {
     font-size: 12px;
     color: #535353;
 }
-.toman-f{
+
+.toman-f {
     width: 55px;
     height: 19px;
     display: flex;
     justify-content: space-between;
     margin-right: 82px;
 }
-.toman-f a{
+
+.toman-f a {
     font-size: 12px;
 }
