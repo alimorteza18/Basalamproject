@@ -3,32 +3,32 @@
     <div class="txt">
       <div class="txt-top">
         <div class="p1">
-          <a>از غرفه:</a>
+          <a>از:</a>
         </div>
         <div class="p2">
-          <b>{{ vendor.vendorName }}</b>
+          <b>{{vendor.name}}</b>
         </div>
       </div>
       <div class="txt-bottom">
         <div class="img1">
-          <img :src="vendor.profileImg" />
+          <img :src="vendor.logo.url" class="profile-picture"/>
         </div>
         <div class="user">
-          <a>{{ vendor.userName }}</a>
+          <a> {{vendor.owner}}</a>
         </div>
         <div class="gps-logo">
           <img src="@/assets/img/Vector.png" />
         </div>
         <div class="user-city">
-          <a>از {{ vendor.cityName }}</a>
+          <a>از {{vendor.city}}</a>
         </div>
       </div>
     </div>
-    <Product v-for="item in vendor.products" :item="item" :key="item.id" />
+    <Product v-for="card in vendor.products" :key="card.id" :card="card" :productindex="vendor.id" />
     <div class="shoping2">
       <div class="top-shoping2">
         <div class="suprize">
-          <a>{{ vendor.code }}</a>
+          <a>هورا!! ارسال از این غرفه برای شما <span class="ssss">رایگان شد</span></a>
         </div>
       </div>
       <div class="bottom-shoping2">
@@ -65,21 +65,47 @@
   </div>
 </template>
 <script>
-import Product from "./product";
+import Product from "./product.vue";
   export default {
-  name: "vendor",
-  props: {
-    vendor: {
-      type: Object,
-    },
-  },
-  components: {
-      Product,
-  },
-  data() {
-    return {};
-  },
-};
-  
+        name: 'booth-com',
+        data() {
+            return {
+                discountShowBtn: this.vendor.discountbutton,
+            }
+        },
+        components: {
+            Product
+        },
+        props: {
+            vendor: {
+                required: true
+            }
+        },
+        mounted() { 
+            return this.$store.dispatch('totalVendor');
+        },
+        computed: {
+            getTotalVendor() {
+                return this.$store.getters.getTotalVendor(this.vendor.id);
+            },
+        },
+        methods: {
+            thousandSeparator(number) { 
+                return number.toLocaleString('fa-IR');
+            },
+        }
+    }
   
 </script>
+<style>
+.profile-picture {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+    }
+    .sss{
+      color: var(--darkgreen) !important;
+        font-weight: 700;
+    }
+
+</style>

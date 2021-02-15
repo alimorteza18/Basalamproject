@@ -2,30 +2,30 @@
   <div class="shoping">
     <div class="shoping-top">
       <div class="jambon-img">
-        <img :src="item.img" />
+        <img :src="card.image.url" class="product-image" />
       </div>
       <div class="jambon-title">
-        <a>{{ item.shopName }}</a>
+        <a>{{ card.name }}</a>
       </div>
       <div class="price-number">
         <span style="text-decoration: line-through; color: #9d9d9d">
-          {{ item.price }}
+          {{thousandSeparator(totalDisPrice)}}
         </span>
-        <span>{{ item.price2 }}</span>
+        <span>{{thousandSeparator(totalOriginPrice)}}</span>
       </div>
       <div class="toman">
         <img src="@/assets/img/toman.png" />
       </div>
     </div>
     <div class="shoping-bottom">
-      <button class="minus-btn" type="button" @mousedown="decrement" @mouseup="cleartimer">
+      <button class="minus-btn" type="button"  @mousedown="looper(true)" @mouseup="stopTimer">
         <img src="@/assets/img/Vector1.png" />
       </button>
-      <input type="text" size="25" :value="item.counter" class="count" />
-      <button type="button" class="plus-btn" @mousedown="increment" @mouseup="cleartimer">
+      <input type="tel" size="25" :value="this.card.counter" min="0" max="99" class="count" />
+      <button type="button" class="plus-btn" @mousedown="looper(false)" @mouseup="stopTimer">
         <img src="@/assets/img/Vector3.png" />
       </button>
-      <button @click="remove" class="remove-btn" type="button">
+      <button class="remove-btn" type="button" @click="removeProduct">
         <img src="@/assets/img/remove.png" />
       </button>
       <div class="txt-2">
@@ -36,46 +36,66 @@
 </template>
 
 <script>
-export default {
-   data() {
-    return {
-      speed: 750,
-      setTime: null,
-    };
-  },
-  name: "Product",
-  computed: {
+  export default {
+        name: "card-com",
+        data() {
+            return {
+              speed: 200,
+               setTime: null,
+            }
+        },
+        props: {
+            card: {
+                required: true,
+            },
+            boothindex: {
+                required: true
+            }
+        },
+        computed: {
+            totalDisPrice() {
+                return this.card.price * this.card.counter;
+            },
+            totalOriginPrice() {
+                return this.card.primaryPrice * this.card.counter;
+            }
+        },
+        methods: {
+            thousandSeparator(number) { 
+                return number.toLocaleString('fa-IR');
+            },
+             removeProduct() { 
+                return this.$store.dispatch('removeProduct', this.card);
+            },
+            looper(type) {
+                let args = [type, this.card.id]
+                this.$store.dispatch('crement', args);
+                this.loopTimer(type);
+            },
+            loopTimer(type) { 
+                if (this.$store.state.sum < 500) {
+                    this.timer = setTimeout(() => {
+                        this.looper(type);
+                    }, 300);
+                } else {
+                    this.timer = setTimeout(() => {
+                        this.looper(type);
+                    }, 30);
+                }
+            },
+            stopTimer() { 
+                clearTimeout(this.timer);
+                this.$store.state.sum = 0;
+            }
 
-  },
-
-  props: {
-    item: {
-      type: Object,
-    },
-  },
-   methods: {
-    remove() {
-      this.$store.dispatch("removeProduct", this.item.id);
-    },
-    increment() {
-      this.$store.dispatch('increment', this.item.id);
-      this.timer(this.increment);
-    },
-    decrement() {
-      this.$store.dispatch('decrement', this.item.id);
-      this.timer(this.decrement);
-    },
-    timer(speed) {
-      this.setTime = setTimeout(() => {
-        speed(), (this.speed -= 75);
-      }, this.speed);
-    },
-    cleartimer() {
-      clearTimeout(this.setTime);
-      this.speed = 500;
-    },
-  },
- 
-  }
+        },
+    }
 
 </script>
+<style >
+.product-image {
+        width: 82px;
+        height: 82px;
+        border-radius: 8px;
+}
+</style>
