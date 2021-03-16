@@ -3,21 +3,21 @@
         <section id="category" class="txt-normal">
             از غرفه: <span class="primary-tag">{{order.name}}</span>
         </section>
-        <user v-for="product in order.products" :key="product.id" :product="product"></user>
+        <Product v-for="product in order.products" :key="product.id" :product="product"></Product>
     </div>
 </template>
 
 <script>
-    import user from '@/components/user.vue'
+    import Product from '@/components/Product.vue'
     export default {
-        name: 'Order',
+        name: 'order-com',
         data() {
             return {
 
             }
         },
         components: {
-            user
+            Product
         },
         props: {
             order: {

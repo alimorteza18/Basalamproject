@@ -1,101 +1,75 @@
 <template>
-  <div class="shoping">
-    <div class="shoping-top">
-      <div class="jambon-img">
-        <img :src="card.image.url" class="product-image" />
-      </div>
-      <div class="jambon-title">
-        <a>{{ card.name }}</a>
-      </div>
-      <div class="price-number">
-        <span style="text-decoration: line-through; color: #9d9d9d">
-          {{thousandSeparator(totalDisPrice)}}
-        </span>
-        <span>{{thousandSeparator(totalOriginPrice)}}</span>
-      </div>
-      <div class="toman">
-        <img src="@/assets/img/toman.png" />
-      </div>
+    <div id="Product-com" class="flex">
+        <img class="product-image" :src="product.image.url" @error="defaultPicture" />
+        <div class="contain flex txt-small space-between-dir">
+            <p>{{ product.name }}</p>
+            <div class="flex space-between-dir">
+                <span>{{product.counter}} عدد</span>
+                <div class="flex price">
+                    <span class="flex">
+                        {{thousandSeparator(totalDisPrice)}}
+                        <img src="@/assets/image/Toman.svg" alt="Value" />
+                    </span>
+                    <del>{{thousandSeparator(totalOriginPrice)}}</del>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="shoping-bottom">
-      <button class="minus-btn" type="button"  @mousedown="looper(true)" @mouseup="stopTimer">
-        <img src="@/assets/img/Vector1.png" />
-      </button>
-      <input type="tel" size="25" :value="this.card.counter" min="0" max="99" class="count" />
-      <button type="button" class="plus-btn" @mousedown="looper(false)" @mouseup="stopTimer">
-        <img src="@/assets/img/Vector3.png" />
-      </button>
-      <button class="remove-btn" type="button" @click="removeProduct">
-        <img src="@/assets/img/remove.png" />
-      </button>
-      <div class="txt-2">
-        <a>ذخیره در لیست خرید بعدی</a>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
-  export default {
-        name: "card-com",
-        data() {
-            return {
-              speed: 200,
-               setTime: null,
-            }
-        },
+    export default {
+        name: "product-com",
         props: {
-            card: {
+            product: {
                 required: true,
             },
-            boothindex: {
-                required: true
-            }
         },
         computed: {
-            totalDisPrice() {
-                return this.card.price * this.card.counter;
+            totalDisPrice() { // The method of displaying the sum of each product
+                return this.product.price * this.product.counter;
             },
-            totalOriginPrice() {
-                return this.card.primaryPrice * this.card.counter;
+            totalOriginPrice() { // The method of displaying the sum of each product
+                return this.product.primaryPrice * this.product.counter;
+
             }
         },
         methods: {
-            thousandSeparator(number) { 
+            defaultPicture() { // Method for the default photo
+                this.src = 'https://s17.picofile.com/file/8424599468/Without_Picture.png';
+            },
+            thousandSeparator(number) { // Method for displaying Persian numbers
                 return number.toLocaleString('fa-IR');
             },
-             removeProduct() { 
-                return this.$store.dispatch('removeProduct', this.card);
-            },
-            looper(type) {
-                let args = [type, this.card.id]
-                this.$store.dispatch('crement', args);
-                this.loopTimer(type);
-            },
-            loopTimer(type) { 
-                if (this.$store.state.sum < 500) {
-                    this.timer = setTimeout(() => {
-                        this.looper(type);
-                    }, 300);
-                } else {
-                    this.timer = setTimeout(() => {
-                        this.looper(type);
-                    }, 30);
-                }
-            },
-            stopTimer() { 
-                clearTimeout(this.timer);
-                this.$store.state.sum = 0;
-            }
-
         },
     }
-
 </script>
-<style >
-.product-image {
+<style scoped>
+    #Product-com {
+        padding: 16px 0px;
+        border-bottom: 1px solid var(--silvergray);
+    }
+
+    .contain {
+        width: 100%;
+        flex-direction: column;
+        padding-right: 8px;
+    }
+
+    .product-image {
         width: 82px;
         height: 82px;
         border-radius: 8px;
-}
+    }
+
+    .price {
+        margin: auto 0px 0px 0px;
+        flex-direction: row-reverse;
+    }
+
+    del {
+        color: var(--lightgray);
+        display: inline-block;
+        margin-left: 8px;
+    }
 </style>

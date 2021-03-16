@@ -1,11 +1,11 @@
 <template>
-    <div class="container">
+    <div id="Payment-com">
         <Header></Header>
         <main>
             <header>
                 <div class="flex primary-tag vertical-center">
                     <router-link to="/addressbasket">
-                        <button class="big-btn-icon"><img src="@/assets/img/Back_Icon.svg"></button>
+                        <button class="big-btn-icon"><img src="@/assets/image/Back_Icon.svg"></button>
                     </router-link>
                     <span>پرداخت</span>
                 </div>
@@ -54,10 +54,10 @@
 </template>
 
 <script>
-    import Header from '@/components/header.vue';
+    import Header from '@/components/Header.vue';
     import Order from '@/components/Order.vue';
     export default {
-        name: 'payment',
+        name: 'payment-com',
         data() {
             return {}
         },
@@ -66,7 +66,7 @@
             Order
         },
         computed: {
-            orders() {
+            orders() { // Display information of each booth
                 return this.$store.state.vendors;
             }
         }
@@ -74,107 +74,6 @@
 </script>
 
 <style scoped>
-
-input[type="text"] {
-    padding: 8px 16px 9px 16px;
-    border-radius: 8px;
-    border: 1px solid var(--lightgray);
-    width: 280px;
-    margin-top: 8px;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    display: none;
-}
-
-.select-radio {
-    content: '';
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-color: white;
-    border-radius: 50%;
-    border: 2px solid var(--lightgray);
-    z-index: 1;
-}
-
-.radioSelected {
-    background-color: var(--teabery);
-    border: 2px solid var(--teabery);
-}
-
-.select-radio:after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    display: block;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    right: 7px;
-    bottom: 7px;
-    opacity: 0;
-    transition: .5s;
-}
-
-
-input[type="radio"]:checked+.select-radio:after {
-    opacity: 1;
-}
-
-.select-checkbox {
-    content: '';
-    width: 46px;
-    height: 28px;
-    display: block;
-    border-radius: 20px;
-    background-color: var(--silvergray);
-    margin-left: 8px;
-    transition: .5s;
-}
-
-.select-checkbox:before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    display: block;
-    background-color: white;
-    border-radius: 20px;
-    border: 1px solid var(--lightgray);
-    position: absolute;
-    top: 1px;
-    right: 20px;
-}
-
-input[type="checkbox"]:checked+.select-checkbox:before {
-    margin-right: -19px;
-    border: 1px solid white;
-}
-
-input[type="checkbox"]:checked+.select-checkbox {
-    background-color: var(--teabery);
-}
-
-a {
-    text-decoration: none;
-}
-
-.primary-link,
-.primary-tag {
-    font-size: calc(var(--font-size) - var(--mobile-ratio));
-    font-weight: 600;
-}
-
-.secondary-link {
-    font-size: calc(var(--font-size) - var(--mobile-ratio));
-}
-
-.primary-link {
-    width: 50%;
-    display: block;
-    padding: 16px 0px;
-    text-align: center;
-}
     header {
         padding: 12px 14px;
     }
@@ -247,5 +146,7 @@ a {
     footer {
         box-shadow: 0px 8px 24px rgba(128, 128, 128, .24);
         background-color: white;
+        position: sticky;
+        bottom: 0;
     }
 </style>
