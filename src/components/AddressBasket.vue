@@ -42,7 +42,7 @@
             addAddress() { // Add new address
                 let obj = {
                     id: this.addressCounter++,
-                    name: "امیرعلی کوچولو",
+                    name: "محمد مهدی الهی فر",
                     selected: false,
                     address: "قم، پردیسان، خیابان دانشگاه، بعد از میدان علوم، روبروی پایانه، ساختمان شرکت توسعه و تدبیر جوامع باسلام"
                 }
