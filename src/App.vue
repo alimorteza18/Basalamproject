@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition enter-active-class="animated fadeIn">
+     <router-view></router-view>
+    </transition>
+   
   </div>
 </template>
 
@@ -20,4 +23,5 @@
 
 <style>
   @import url("./assets/style.css");
+  @import url("./assets/animate.css");
 </style>
