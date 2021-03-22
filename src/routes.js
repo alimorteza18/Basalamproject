@@ -1,6 +1,15 @@
 import Basket from '@/Basket.vue';
-import AddressBasket from '@/components/AddressBasket.vue';
-import Payment from '@/components/Payment.vue'
+var AddressBasket = resolve => {
+    require.ensure(['@/components/AddressBasket.vue'], () => {
+        resolve(require('@/components/AddressBasket.vue'));
+    });
+};
+
+var Payment = resolve => {
+    require.ensure(['@/components/Payment.vue'], () => {
+        resolve(require('@/components/Payment.vue'));
+    });
+};
 
 
 export const routes = [{
